@@ -4,7 +4,8 @@ const logger = createLogger({
     transports: [
         new transports.File({
             filename: 'info.log',
-            level: 'info'
+            level: 'info',
+            maxFiles:'2d',
         })
     ]
 })
