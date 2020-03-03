@@ -2,13 +2,16 @@ const mongoose = require('mongoose')
 
 const Product = mongoose.model('Product')
 
+//const logger = require("../../Logger")
+
+
 module.exports = {
     async index(req, res){
         try{
             const { page = 1 } = req.query
     
             const products = await Product.paginate({}, {page, limit: 10})
-    
+            //logger.log('info', `${products}`)
             return res.json(products)
         }catch (err){
             console.log(err)

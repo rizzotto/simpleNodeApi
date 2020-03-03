@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const requiredir = require('require-dir')
 const cors = require('cors')
+const logger = require("./Logger")
 
 const app = express()
 
@@ -16,4 +17,7 @@ requiredir('./src/models')
 
 app.use('/api', require('./src/routes'))
 
-app.listen(3001)
+app.listen(3001, () => {
+    logger.log('info', "server up and running on PORT: 3001");
+})
+
