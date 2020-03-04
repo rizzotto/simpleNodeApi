@@ -17,7 +17,7 @@ requiredir('./src/models')
 
 app.use('/api', require('./src/routes'))
 
-=====
+
 app.listen(8080, () => {
     logger.log('info', "server up and running on PORT: 3001");
 })
